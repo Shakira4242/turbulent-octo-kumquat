@@ -1,0 +1,29 @@
+
+#draggable {
+	width: 100px;
+	height: 100px;
+	background: #555;
+}
+
+#indexHeader {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 100px;
+}
+
+.indexBackground {
+	background: url('https://wallpaperscraft.com/image/mountains_distance_sky_black_and_white_92675_2560x1440.jpg') center center fixed; 
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#facebookLog {
+	color: white;
+	padding: 5px;
+	border: solid 5px white;
+	text-decoration: none;
+}
+
