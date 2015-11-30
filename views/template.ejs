@@ -55,7 +55,7 @@
 		  height: auto;
 		  min-width: 10px;
 		  width: 10px;
-		  background-color: #ccc;
+		  background-color: #ff4a56;
 		  
 		  transition-delay: 0s;
 		  transition-duration: 0.4s;
@@ -70,7 +70,7 @@
 		  bottom: 0;
 		  height: auto;
 		  width: 140px;
-		  background-color: #9ED29E;
+		  background-color: #ff4a56;
 		}
 
 		nav a {
@@ -323,19 +323,18 @@
     </style>
   </head>
   <body class="background" style="background-repeat:no-repeat;background-size:cover;">
-	<nav>
-	  <ul>
-	    <li><a id="safeDownload" href="#">Dowload</a></li>
-	    <li><a href="#">Background</a></li>
-	    <li><a href="#">Edit</a></li>
-	  </ul>
-	</nav>
+		<nav>
+		  <ul>
+		    <li><a id="safeDownload">Dowload</a></li>
+		    <li><a href="#">Background</a></li>
+		    <li><a href="#">Edit</a></li>
+		  </ul>
+		</nav>
   	<div id="hello" contenteditable="true">
 	    <!-- Header -->
 	    <header id="top" class="header">
 	        <div id="photo1" class="text-vertical-center">
-	            <h1 class="draggable"></h1>
-	            <br>
+	            <h1 id="testing"></h1>
 	            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
 	        </div>
 	    </header>
@@ -527,23 +526,29 @@
 	    </footer>
 	</div>
     <script>
+
     	i=0;
-    	
     	$(".background").click(function(){
     		i++;
     	});	
 
-   		function editPage(str,image){
+   		function downloadURI(str,image,name){
    			var html = '<html><head>\x3Cscript src="//code.jquery.com/jquery-1.11.3.min.js">\x3C/script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"><style>body{width:100%;height:100%;color: 808080;background-image:' + image + ';background-repeat:no-repeat;background-size:cover;}.draggable{width: 100px;height: 100px;background: #555;} div{contenteditable:false}html,body {width: 100%;height: 100%;}body {font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}.text-vertical-center {display: table-cell;text-align: center;vertical-align: middle;}.text-vertical-center h1 {margin: 0;padding: 0;font-size: 4.5em;font-weight: 700;}.btn-dark {border-radius: 0;color: #fff;background-color: rgba(0,0,0,0.4);}.btn-dark:hover,.btn-dark:focus,.btn-dark:active {color: #fff;background-color: rgba(0,0,0,0.7);}.btn-light {border-radius: 0;color: #333;background-color: rgb(255,255,255);}.btn-light:hover,.btn-light:focus,.btn-light:active {color: #333;background-color: rgba(255,255,255,0.8);}hr.small {max-width: 100px;}#sidebar-wrapper {z-index: 1000;position: fixed;right: 0;width: 250px;height: 100%;margin-right: -250px;overflow-y: auto;background: #222;-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;}.sidebar-nav {position: absolute;top: 0;width: 250px;margin: 0;padding: 0;list-style: none;}.sidebar-nav li {text-indent: 20px;line-height: 40px;}.sidebar-nav li a {display: block;text-decoration: none;color: #999;}.sidebar-nav li a:hover {text-decoration: none;color: #fff;background: rgba(255,255,255,0.2);}.sidebar-nav li a:active,.sidebar-nav li a:focus {text-decoration: none;}.sidebar-nav > .sidebar-brand {height: 55px;font-size: 18px;line-height: 55px;}.sidebar-nav > .sidebar-brand a {color: #999;}.sidebar-nav > .sidebar-brand a:hover {color: #fff;background: none;}#menu-toggle {z-index: 1;position: fixed;top: 0;right: 0;}#sidebar-wrapper.active {right: 250px;width: 250px;-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;}.toggle {margin: 5px 5px 0 0;}.header{display: table;position: relative;width: 100%;height: 100%;background: url(../img/bg.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}.about {padding: 50px 0;}.services{padding: 50px 0;}.service-item{margin-bottom: 30px;}.callout{display: table;width: 100%;height: 400px;color: #fff;background: url(../img/callout.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}.portfolio{padding: 50px 0;}.portfolio-item{margin-bottom: 30px;}.img-portfolio{margin: 0 auto;}.img-portfolio:hover{opacity: 0.8;}.call-to-action{padding: 50px 0;}.call-to-action.btn{margin: 10px;}.map{height: 200px;}@media(max-width:768px){.map{height: 75%;}}footer{padding: 100px 0;}</style></head><body>' + str + '</body></html>';
-   			document.location = 'data:text/html;charset=UTF-8,' + html;
+   			"data:text/html,HelloWorld!"
+   			var link = document.createElement("a");
+			link.download = name;
+		  	link.href = 'data:text/html,' + html;
+		 	link.click();
    		}
+
 
    		$(".draggable").draggable();
    		$(".resizable").resizable();
-
    		
-   		$('#safeDownload').click(function(){
-   			editPage($("#hello").html(),$(".background").css('background-image'));
+   		$('#safeDownload').click(function(e){
+   			e.preventDefault();
+   			downloadURI($("#hello").html(),$(".background").css('background-image'),"helloWorld.html");
+   			console.log($("#testing").offset());
    		});
 
     </script>

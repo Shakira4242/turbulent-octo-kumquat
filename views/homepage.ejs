@@ -1,0 +1,25 @@
+<% include ../views/partials/header %>
+  <body>
+  	<nav>
+		  <ul>
+		    <li><a data-toggle="modal" data-target="#myModal">New Project</a></li>
+		  </ul>
+	  </nav>
+
+	  <ul id="projectlist"></ul>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+          <form>
+					  <div class="question">
+					    <input id="newprojectName" type="text" required/>
+					    <label>Project Name</label>
+					  </div>
+					  <button id="newproject">Submit</button>
+					  <button data-dismiss="modal">Close</button>
+					</form>  
+	      </div>
+	    </div>
+	  </div>
+<% include ../views/partials/footer %>
