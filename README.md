@@ -1,7 +1,9 @@
-# This is a simple website generator. I'm using facebook to pipeline data into a standard editable template. 
+# Simple Website Generator
 
-The technologies I used :
-1. Node.js
-2. Express.js
-3. Mongodb
-4. Facebook API
+Simple Website Generator creates a website from scratch, allows you to edit it and download it. Hosting functionality is on the way.
+
+##Usage
+1. clone repo
+2. npm install
+3. nodemon bin/www
+
