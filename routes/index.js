@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var brain = require('brain');
 var User = require('../models/user');
 
 /* GET home page. */
@@ -10,17 +9,19 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 	User.count({facebookId: req.body.id}, function (err, count){ 
-    if(count>0){
-      //document exists });
-    }
-    else{
-	    var newUser = new User({name: 'Akash',facebookId: req.body.id, project: []});
-			newUser.save(function (err, fluffy) {
-			  if (err) return console.error(err);
-			});
-		}
-		res.redirect('/homepage');
-	}); 
+	    if(count>0){
+	      //document exists });
+	    }
+	    else{
+		    var newUser = new User({name: 'Akash',facebookId: req.body.id, project: []});
+				newUser.save(function (err, fluffy) {
+				  if(err){
+				  	return console.error(err);
+				  }
+				});
+			}
+			res.redirect('/homepage');
+		}); 
 });
 
 router.get('/template', function(req, res, next) {

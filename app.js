@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var brain = require('brain');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -24,7 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
 
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_DB_CONN_GA_EXPRESS);
